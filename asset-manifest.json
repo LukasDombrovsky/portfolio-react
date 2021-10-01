@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/static/css/main.62299967.chunk.css",
+    "main.js": "/static/js/main.d164827d.chunk.js",
+    "main.js.map": "/static/js/main.d164827d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.9ff869e5.js",
+    "runtime-main.js.map": "/static/js/runtime-main.9ff869e5.js.map",
+    "static/js/2.dc686e41.chunk.js": "/static/js/2.dc686e41.chunk.js",
+    "static/js/2.dc686e41.chunk.js.map": "/static/js/2.dc686e41.chunk.js.map",
+    "static/js/3.e8e16937.chunk.js": "/static/js/3.e8e16937.chunk.js",
+    "static/js/3.e8e16937.chunk.js.map": "/static/js/3.e8e16937.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.62299967.chunk.css.map": "/static/css/main.62299967.chunk.css.map",
+    "static/js/2.dc686e41.chunk.js.LICENSE.txt": "/static/js/2.dc686e41.chunk.js.LICENSE.txt",
+    "static/media/aboutMe_1.09ac66a1.png": "/static/media/aboutMe_1.09ac66a1.png",
+    "static/media/aboutMe_2.b8268f8e.png": "/static/media/aboutMe_2.b8268f8e.png",
+    "static/media/cover.702948d3.png": "/static/media/cover.702948d3.png",
+    "static/media/cryptoDashboard-link.0a765e3e.png": "/static/media/cryptoDashboard-link.0a765e3e.png",
+    "static/media/mafex-link.d1650c03.png": "/static/media/mafex-link.d1650c03.png",
+    "static/media/stockPredict-link.7148500e.png": "/static/media/stockPredict-link.7148500e.png",
+    "static/media/techStack-1.ac14d2f2.png": "/static/media/techStack-1.ac14d2f2.png",
+    "static/media/techStack-3.24dc2dac.png": "/static/media/techStack-3.24dc2dac.png",
+    "static/media/techStack-4.03475b64.png": "/static/media/techStack-4.03475b64.png",
+    "static/media/techStack-5.17936c69.png": "/static/media/techStack-5.17936c69.png",
+    "static/media/techStack-6.2e6a1b95.png": "/static/media/techStack-6.2e6a1b95.png",
+    "static/media/techStack-7.0b914c5e.png": "/static/media/techStack-7.0b914c5e.png",
+    "static/media/techStack-8.9537ac2f.png": "/static/media/techStack-8.9537ac2f.png",
+    "static/media/App.scss": "/static/media/techStack-bg.8b0027ab.jpeg",
+    "static/media/twitterInsights-link.b1d8df4d.png": "/static/media/twitterInsights-link.b1d8df4d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9ff869e5.js",
+    "static/js/2.dc686e41.chunk.js",
+    "static/css/main.62299967.chunk.css",
+    "static/js/main.d164827d.chunk.js"
+  ]
+}
