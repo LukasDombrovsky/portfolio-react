@@ -1,0 +1,17 @@
+@import "../../variables";
+
+p.main {
+  width: 100%;
+  @media #{$lg} {
+    max-width: 70%;
+  }
+  @media #{$xl} {
+    max-width: 70%;
+  }
+  @media #{$xxl} {
+    max-width: 70%;
+  }
+}
+.display-6 {
+  font-size: 1.7rem;
+}

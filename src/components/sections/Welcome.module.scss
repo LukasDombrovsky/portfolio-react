@@ -1,0 +1,34 @@
+@import "../../variables";
+
+.welcome {
+  img {
+    height: 8rem;
+    @media #{$sm} {
+      height: 12rem;
+    }
+    @media #{$md} {
+      height: 13rem;
+    }
+    @media #{$lg} {
+      height: 16rem;
+    }
+    @media #{$xl} {
+      height: 16rem;
+    }
+    @media #{$xxl} {
+      height: 16rem;
+    }
+  }
+
+  // Thin outline of heading on background picture
+  h1 {
+    -webkit-text-stroke: 0.5px black;
+    -webkit-text-fill-color: white;
+  }
+
+  .headline {
+    @media #{$xs} {
+      text-align: center;
+    }
+  }
+}

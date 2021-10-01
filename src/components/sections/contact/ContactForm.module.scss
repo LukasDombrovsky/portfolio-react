@@ -1,0 +1,15 @@
+.form {
+  color: black;
+  font-family: "Open Sans", sans-serif;
+}
+
+.message {
+  color: black;
+  font-size: 1.6rem;
+  margin: 7rem auto;
+  text-align: center;
+
+  .errorHeading {
+      color: rgba(177, 23, 23, 0.74);
+  }
+}
