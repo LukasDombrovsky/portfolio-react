@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as yup from "yup";
 import { Formik } from "formik";
 import Form from "react-bootstrap/Form";
@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "../../UI/Button";
 import emailjs from "emailjs-com";
+import Recaptcha from "react-recaptcha";
 
 import classes from "./ContactForm.module.scss";
 
@@ -42,10 +43,18 @@ const ContactForm = (props) => {
         },
         (error) => {
           setErrorMessage(true);
-          alert("An error occurred, Please try again", error.text);
+          alert("An error occurred, Please try again later", error.text);
         }
       );
   };
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://www.google.com/recaptcha/api.js";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+  }, []);
 
   return (
     <>
@@ -60,7 +69,7 @@ const ContactForm = (props) => {
       {thankYouMessage && (
         <div className={classes.message}>
           <img src={check} alt="check icon" />
-          <h3>Message Sent, We will get back to you shortly.</h3>
+          <h3>Message Sent, I will get back to you shortly.</h3>
         </div>
       )}
       {!thankYouMessage && !errorMessage && (
@@ -85,6 +94,7 @@ const ContactForm = (props) => {
             handleSubmit,
             handleChange,
             handleBlur,
+            setFieldValue,
             values,
             touched,
             isValid,
@@ -185,18 +195,34 @@ const ContactForm = (props) => {
                   </Form.Control.Feedback>
                 </Form.Group>
               </Row>
+              <Row className="mb-3">
+                <Form.Group className="mb-3">
+                  <Form.Check
+                    required
+                    type="checkbox"
+                    name="terms"
+                    label="I agree to the processing of submitted personal data. My data will not be made available or provided to third parties or published without my consent."
+                    onChange={handleChange}
+                    isInvalid={touched.terms && errors.terms}
+                    feedback={errors.terms}
+                    id="validationFormik0"
+                  />
+                </Form.Group>
+              </Row>
               <Form.Group className="mb-3">
-                <Form.Check
-                  required
-                  type="checkbox"
-                  name="terms"
-                  label="I agree to the processing of submitted personal data. My data will not be made available or provided to third parties or published without my consent."
-                  onChange={handleChange}
-                  isInvalid={touched.terms && errors.terms}
-                  feedback={errors.terms}
-                  id="validationFormik0"
+                <Recaptcha
+                  sitekey="6Le7f6QcAAAAAHnfnxsyGWwK43yNYnVNx-T_p-Ri"
+                  render="explicit"
+                  theme="dark"
+                  verifyCallback={(response) => {
+                    setFieldValue("recaptcha", response);
+                  }}
+                  onloadCallback={() => {
+                    console.log("Done loading!");
+                  }}
                 />
               </Form.Group>
+
               <Button type="submit" variant="primary" size="lg">
                 Send me message
               </Button>
