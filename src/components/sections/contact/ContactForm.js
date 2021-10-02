@@ -33,10 +33,10 @@ const ContactForm = (props) => {
   const sendEmail = (object) => {
     emailjs
       .send(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
+        "service_t2zgtfk",
+        "template_qob5jyg",
         object,
-        process.env.REACT_APP_USER_ID
+        "user_vmDfARaoTTy0rfc7vp0Pn"
       )
       .then(
         (result) => {
