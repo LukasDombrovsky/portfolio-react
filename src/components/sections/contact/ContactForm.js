@@ -27,6 +27,7 @@ const ContactForm = (props) => {
     subject: yup.string().required("Subject field cannot be empty"),
     message: yup.string().required("Message field cannot be empty"),
     terms: yup.bool().required().oneOf([true], "Terms must be accepted"),
+    recaptcha: yup.string().required(),
   });
 
   const sendEmail = (object) => {
@@ -81,6 +82,7 @@ const ContactForm = (props) => {
             subject: "",
             message: "",
             terms: false,
+            recaptcha: "",
           }}
           validationSchema={schema}
           onSubmit={(values, actions) => {
@@ -213,14 +215,17 @@ const ContactForm = (props) => {
                 <Recaptcha
                   sitekey="6Le7f6QcAAAAAHnfnxsyGWwK43yNYnVNx-T_p-Ri"
                   render="explicit"
-                  theme="dark"
+                  theme="light"
                   verifyCallback={(response) => {
                     setFieldValue("recaptcha", response);
                   }}
                   onloadCallback={() => {
-                    console.log("Done loading!");
+                    // console.log("Done loading!");
                   }}
                 />
+                {errors.recaptcha && touched.recaptcha && (
+                  <p className={classes.error}>{errors.recaptcha}</p>
+                )}
               </Form.Group>
 
               <Button type="submit" variant="primary" size="lg">
