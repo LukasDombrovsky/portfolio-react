@@ -111,13 +111,13 @@ const Projects = () => {
         </Col>
         <div className="w-100 d-block d-md-none"></div>
         <Col>
-          <a target="_blank">
-            <DivWithBgImage
-              img={projects_4}
-              addionalStyle={additionalStyle}
-              scaleOnHover={true}
-            ></DivWithBgImage>
-          </a>
+          {/* <a href="" rel="noreferrer" target="_blank"> */}
+          <DivWithBgImage
+            img={projects_4}
+            addionalStyle={additionalStyle}
+            scaleOnHover={true}
+          ></DivWithBgImage>
+          {/* </a> */}
           <h1 className="display-6">Stock Predict - Coming soon</h1>
           <p>
             My bachelor’s thesis application about monitoring financial markets
