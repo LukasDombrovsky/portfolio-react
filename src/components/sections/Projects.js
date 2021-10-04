@@ -31,7 +31,7 @@ const Projects = () => {
       </Row>
       <Row>
         <Col>
-          <a href="null" target="_blank">
+          <a href="https://mafex.sk/" rel="noreferrer" target="_blank">
             <DivWithBgImage
               img={projects_1}
               addionalStyle={additionalStyle}
@@ -53,7 +53,11 @@ const Projects = () => {
         </Col>
         <div className="w-100 d-block d-md-none"></div>
         <Col>
-          <a href="null" target="_blank">
+          <a
+            href="https://crypto-dashboard-react.web.app/"
+            rel="noreferrer"
+            target="_blank"
+          >
             <DivWithBgImage
               img={projects_2}
               addionalStyle={additionalStyle}
@@ -65,14 +69,24 @@ const Projects = () => {
             My diploma’s project which used machine learning for cryptocurrency
             pattern analysis.
           </p>
-          <Button variant="primary" href="" type="button" size="lg">
+          <Button
+            variant="primary"
+            href="https://crypto-dashboard-react.web.app/"
+            target="_blank"
+            type="button"
+            size="lg"
+          >
             Open app
           </Button>
         </Col>
       </Row>
       <Row>
         <Col>
-          <a href="null" target="_blank">
+          <a
+            href="https://twitter-insights-react.web.app/"
+            rel="noreferrer"
+            target="_blank"
+          >
             <DivWithBgImage
               img={projects_3}
               addionalStyle={additionalStyle}
@@ -85,25 +99,38 @@ const Projects = () => {
             from public Twitter posts, analyzes them and visualize the results
             on custom widgets.
           </p>
-          <Button variant="primary" href="" type="button" size="lg">
+          <Button
+            variant="primary"
+            href="https://twitter-insights-react.web.app/"
+            target="_blank"
+            type="button"
+            size="lg"
+          >
             Open app
           </Button>
         </Col>
         <div className="w-100 d-block d-md-none"></div>
         <Col>
-          <a href="null" target="_blank">
+          <a target="_blank">
             <DivWithBgImage
               img={projects_4}
               addionalStyle={additionalStyle}
               scaleOnHover={true}
             ></DivWithBgImage>
           </a>
-          <h1 className="display-6">Stock Predict</h1>
+          <h1 className="display-6">Stock Predict - Coming soon</h1>
           <p>
             My bachelor’s thesis application about monitoring financial markets
             in cloud using predictive algorithms.
           </p>
-          <Button variant="primary" href="" type="button" size="lg">
+          <Button
+            variant="primary"
+            href=""
+            target="_blank"
+            type="button"
+            size="lg"
+            disabled="disabled"
+          >
             Open app
           </Button>
         </Col>
