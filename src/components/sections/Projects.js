@@ -111,21 +111,25 @@ const Projects = () => {
         </Col>
         <div className="w-100 d-block d-md-none"></div>
         <Col>
-          {/* <a href="" rel="noreferrer" target="_blank"> */}
-          <DivWithBgImage
-            img={projects_4}
-            addionalStyle={additionalStyle}
-            scaleOnHover={true}
-          ></DivWithBgImage>
-          {/* </a> */}
-          <h1 className="display-6">Stock Predict - Coming soon</h1>
+          <a
+            href="https://stock-predict-b6b9d.web.app/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <DivWithBgImage
+              img={projects_4}
+              addionalStyle={additionalStyle}
+              scaleOnHover={true}
+            ></DivWithBgImage>
+          </a>
+          <h1 className="display-6">Stock Predict</h1>
           <p>
             My bachelor’s thesis application about monitoring financial markets
             in cloud using predictive algorithms.
           </p>
           <Button
             variant="primary"
-            href=""
+            href="https://stock-predict-b6b9d.web.app/"
             target="_blank"
             type="button"
             size="lg"
