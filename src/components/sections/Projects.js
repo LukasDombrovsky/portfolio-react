@@ -133,7 +133,6 @@ const Projects = () => {
             target="_blank"
             type="button"
             size="lg"
-            disabled="disabled"
           >
             Open app
           </Button>
