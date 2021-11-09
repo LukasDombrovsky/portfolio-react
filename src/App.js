@@ -15,26 +15,26 @@ function App() {
         brand="Lukas Dombrovsky"
         homeLink="root"
         links={["home", "about", "projects", "techStack", "contact"]}
+        expand="md"
         colors={{
           notScrolled: { backgroundColor: "black", textColor: "white" },
           scrolled: { backgroundColor: "white", textColor: "black" },
         }}
+        activeTextColor="#237acc"
       />
-      <div data-spy="scroll" data-target="#navbar" data-offset="0">
-        <Welcome id="home" />
-        <Section id="about">
-          <About />
-        </Section>
-        <Section id="projects">
-          <Projects />
-        </Section>
-        <Section id="techStack">
-          <TechStack />
-        </Section>
-        <Section id="contact">
-          <Contact />
-        </Section>
-      </div>
+      <Welcome id="home" />
+      <Section id="about">
+        <About />
+      </Section>
+      <Section id="projects">
+        <Projects />
+      </Section>
+      <Section id="techStack">
+        <TechStack />
+      </Section>
+      <Section id="contact">
+        <Contact />
+      </Section>
     </>
   );
 }
