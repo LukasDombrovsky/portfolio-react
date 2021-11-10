@@ -228,9 +228,7 @@ const ContactForm = (props) => {
                 )}
               </Form.Group>
 
-              <Button type="submit" variant="primary" size="lg">
-                Send me message
-              </Button>
+              <Button type="submit">Send me message</Button>
             </Form>
           )}
         </Formik>

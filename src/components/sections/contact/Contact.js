@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
+import Button from "../../UI/Button";
 import ContactModal from "./ContactModal";
 
 import classes from "./Contact.module.scss";
@@ -47,13 +47,7 @@ const Contact = () => {
         <Col>
           <h1 className={classes["display-6"]}>Contact form</h1>
           <p>You can also contact me directly through this form.</p>
-          <Button
-            variant="primary"
-            href=""
-            type="button"
-            size="lg"
-            onClick={openContactFormHandler}
-          >
+          <Button type="button" onClick={openContactFormHandler}>
             Send me message
           </Button>
         </Col>

@@ -1,5 +1,5 @@
 import NavigationBar from "./components/UI/NavigationBar";
-import Welcome from "./components/sections/Welcome";
+import Home from "./components/sections/Home";
 import Section from "./components/UI/Section";
 import About from "./components/sections/About";
 import Projects from "./components/sections/Projects";
@@ -22,16 +22,14 @@ function App() {
         }}
         activeTextColor="#237acc"
       />
-      <Welcome id="home" />
+      <Home id="home" />
       <Section id="about">
         <About />
       </Section>
       <Section id="projects">
         <Projects />
       </Section>
-      <Section id="techStack">
-        <TechStack />
-      </Section>
+      <TechStack id="techStack" />
       <Section id="contact">
         <Contact />
       </Section>

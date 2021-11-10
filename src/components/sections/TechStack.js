@@ -1,6 +1,8 @@
+import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import DivWithBgImage from "../UI/DivWithBgImage";
+import classes from "./TechStack.module.scss";
 
 import tech_1 from "../../img/techStack-1.png";
 import tech_2 from "../../img/techStack-2.png";
@@ -65,52 +67,54 @@ const additionalStyle = {
   backgroundSize: "contain",
 };
 
-const TechStack = () => {
+const TechStack = (props) => {
   return (
-    <>
-      <Row>
-        <Col>
-          <h1 className="display-5">My tech stack</h1>
-          <p>I actively use following technologies and libraries:</p>
-        </Col>
-      </Row>
-      <Row>
-        {technologies.firstRow.map((technology) => (
-          <Col key={technology.name}>
-            <a
-              href={technology.link}
-              rel="noreferrer"
-              target="_blank"
-              title={technology.name}
-            >
-              <DivWithBgImage
-                img={technology.image}
-                addionalStyle={additionalStyle}
-                scaleOnHover={true}
-              ></DivWithBgImage>
-            </a>
+    <div id={props.id} className={classes.techStack}>
+      <Container className="section-container">
+        <Row>
+          <Col>
+            <h1 className="display-5">My tech stack</h1>
+            <p>I actively use following technologies and libraries:</p>
           </Col>
-        ))}
-      </Row>
-      <Row>
-        {technologies.secondRow.map((technology) => (
-          <Col key={technology.name}>
-            <a
-              href={technology.link}
-              rel="noreferrer"
-              target="_blank"
-              title={technology.name}
-            >
-              <DivWithBgImage
-                img={technology.image}
-                addionalStyle={additionalStyle}
-                scaleOnHover={true}
-              ></DivWithBgImage>
-            </a>
-          </Col>
-        ))}
-      </Row>
-    </>
+        </Row>
+        <Row>
+          {technologies.firstRow.map((technology) => (
+            <Col key={technology.name}>
+              <a
+                href={technology.link}
+                rel="noreferrer"
+                target="_blank"
+                title={technology.name}
+              >
+                <DivWithBgImage
+                  img={technology.image}
+                  addionalStyle={additionalStyle}
+                  scaleOnHover={true}
+                ></DivWithBgImage>
+              </a>
+            </Col>
+          ))}
+        </Row>
+        <Row>
+          {technologies.secondRow.map((technology) => (
+            <Col key={technology.name}>
+              <a
+                href={technology.link}
+                rel="noreferrer"
+                target="_blank"
+                title={technology.name}
+              >
+                <DivWithBgImage
+                  img={technology.image}
+                  addionalStyle={additionalStyle}
+                  scaleOnHover={true}
+                ></DivWithBgImage>
+              </a>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+    </div>
   );
 };
 

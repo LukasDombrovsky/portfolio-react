@@ -6,12 +6,17 @@ const DivWithBgImage = (props) => {
     backgroundSize: "cover",
   };
 
-  Object.keys(props.addionalStyle).map((k) => {
-    return (style[k] = props.addionalStyle[k]);
-  });
+  if (props.addionalStyle) {
+    Object.keys(props.addionalStyle).map((k) => {
+      return (style[k] = props.addionalStyle[k]);
+    });
+  }
 
   return (
-    <div style={style} className={props.scaleOnHover ? classes.scaleOnHover : null}>
+    <div
+      style={style}
+      className={props.scaleOnHover ? classes.scaleOnHover : null}
+    >
       {props.children}
     </div>
   );

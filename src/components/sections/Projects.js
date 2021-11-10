@@ -22,7 +22,7 @@ const Projects = () => {
       <Row>
         <Col>
           <h1 className="display-5">My past projects</h1>
-          <p className={classes.main}>
+          <p className={classes["main-text"]}>
             Here you can find portfolio of my past projects. Originally they
             were written in different languages and technolgies, but I rewrited
             most of them with React.
@@ -40,14 +40,7 @@ const Projects = () => {
           </a>
           <h1 className="display-6">Mafex</h1>
           <p>Presentational website built for construction company.</p>
-          <Button
-            as="a"
-            variant="primary"
-            href="https://mafex.sk/"
-            target="_blank"
-            type="button"
-            size="lg"
-          >
+          <Button type="button" href="https://mafex.sk/" target="_blank">
             Open app
           </Button>
         </Col>
@@ -70,11 +63,9 @@ const Projects = () => {
             pattern analysis.
           </p>
           <Button
-            variant="primary"
+            type="button"
             href="https://crypto-dashboard-react.web.app/"
             target="_blank"
-            type="button"
-            size="lg"
           >
             Open app
           </Button>
@@ -100,11 +91,9 @@ const Projects = () => {
             on custom widgets.
           </p>
           <Button
-            variant="primary"
+            type="button"
             href="https://twitter-insights-react.web.app/"
             target="_blank"
-            type="button"
-            size="lg"
           >
             Open app
           </Button>
@@ -128,11 +117,9 @@ const Projects = () => {
             in cloud using predictive algorithms.
           </p>
           <Button
-            variant="primary"
+            type="button"
             href="https://stock-predict-b6b9d.web.app/"
             target="_blank"
-            type="button"
-            size="lg"
           >
             Open app
           </Button>

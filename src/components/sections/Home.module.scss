@@ -1,8 +1,11 @@
 @import "../../variables";
 
-.welcome {
+.home {
+  min-height: 100vh;
+
   img {
     height: 8rem;
+
     @media #{$sm} {
       height: 12rem;
     }

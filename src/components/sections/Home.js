@@ -3,19 +3,17 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "../UI/Button";
 import SectionWithBgImage from "../UI/SectionWithBgImage";
-
-import classes from "./Welcome.module.scss";
+import classes from "./Home.module.scss";
 
 import logo from "../../img/coding.png";
 import bgImage from "../../img/cover.png";
 
-const Welcome = (props) => {
+const Home = (props) => {
   return (
     <SectionWithBgImage
       id={props.id}
       bgImage={bgImage}
-      className={classes.welcome}
-      height="100vh"
+      className={classes.home}
     >
       <Container>
         <Row>
@@ -25,14 +23,14 @@ const Welcome = (props) => {
               <div className="w-100"></div>
               portfolio page
             </h1>
-            <Button variant="primary" href="#projects" type="button" size="lg">
+            <Button type="button" href="#projects">
               See my past projects
             </Button>
           </Col>
           {/* Force next columns to break to new line at sm breakpoint and down */}
           <div className="w-100 d-block d-sm-none"></div>
           <Col className="d-flex justify-content-center">
-            <img src={logo} className="img-fluid" alt="coding logo" />
+            <img src={logo} alt="coding logo" />
           </Col>
         </Row>
       </Container>
@@ -40,4 +38,4 @@ const Welcome = (props) => {
   );
 };
 
-export default Welcome;
+export default Home;
