@@ -1,28 +1,55 @@
-@import "../../variables";
+@import '../../variables';
 
 .navbar {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: all 0.5s ease-out;
+  background-color: $black;
 
-  .nav-link {
+  &.scrolled {
+    background-color: $white;
+  }
+
+  .link {
+    color: $white;
     font-size: 1.4rem;
     padding: 10px 20px;
     text-decoration: none;
+
+    &:hover {
+      color: $red !important;
+    }
+
+    &.active {
+      color: $blue;
+    }
+
+    &.scrolled {
+      color: $black;
+
+      &.active {
+        color: $blue;
+      }
+    }
   }
-  .nav-link:hover {
-    color: $red !important;
-  }
-  .navbar-collapse {
+
+  .collapse {
     justify-content: flex-end;
   }
 
-  .navbar-brand {
+  .brand {
+    color: $white;
     font-size: 2rem;
+
+    &:hover {
+      color: $red;
+    }
+
+    &.scrolled {
+      color: $black;
+    }
 
     @media #{$xs} {
       font-size: 1.5rem;
     }
-  }
-  .navbar-brand:hover {
-    color: $red !important;
   }
 }
