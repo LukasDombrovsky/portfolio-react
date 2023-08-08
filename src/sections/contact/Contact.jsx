@@ -1,10 +1,10 @@
-import { useState } from "react";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Button from "../../UI/Button";
-import ContactModal from "./ContactModal";
+import { useState } from 'react';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from '../../components/Button/Button';
+import ContactModal from '../../components/ContactModal/ContactModal';
 
-import classes from "./Contact.module.scss";
+import classes from './Contact.module.scss';
 
 const Contact = () => {
   const [contactFormOpened, setContactFormOpened] = useState(false);
@@ -26,28 +26,28 @@ const Contact = () => {
   return (
     <>
       {contactFormOpened && (
-        <ContactModal title="Contact form" onClose={closeContactFormHandler} />
+        <ContactModal title='Contact form' onClose={closeContactFormHandler} />
       )}
       <Row>
         <Col>
-          <h1 className="display-5">Contact</h1>
+          <h1 className='display-5'>Contact</h1>
         </Col>
       </Row>
       <Row>
         <Col>
           <p>Ing. Lukas Dombrovsky</p>
-          <p className={classes["contact-row"]}>lukas.dombrovsky@gmail.com</p>
-          <p className={classes["contact-row"]}>+421 940 063 988</p>
-          <p className={classes["contact-row"]}>
-            <a href="linkedin.com/in/lukasdombrovsky" target="_blank">
+          <p className={classes['contact-row']}>lukas.dombrovsky@gmail.com</p>
+          <p className={classes['contact-row']}>+421 940 063 988</p>
+          <p className={classes['contact-row']}>
+            <a href='linkedin.com/in/lukasdombrovsky' target='_blank'>
               linkedin.com/in/lukasdombrovsky
             </a>
           </p>
         </Col>
         <Col>
-          <h1 className={classes["display-6"]}>Contact form</h1>
+          <h1 className={classes['display-6']}>Contact form</h1>
           <p>You can also contact me directly through this form.</p>
-          <Button type="button" onClick={openContactFormHandler}>
+          <Button type='button' onClick={openContactFormHandler}>
             Send me message
           </Button>
         </Col>

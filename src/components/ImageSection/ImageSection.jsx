@@ -1,11 +1,11 @@
-const SectionWithBgImage = (props) => {
+const ImageSection = (props) => {
   const style = {
     background: `url(${props.bgImage}) no-repeat center center`,
-    backgroundSize: "cover",
+    backgroundSize: 'cover',
   };
 
   if (props.height) {
-    style["height"] = props.height;
+    style['height'] = props.height;
   }
 
   return (
@@ -19,4 +19,4 @@ const SectionWithBgImage = (props) => {
   );
 };
 
-export default SectionWithBgImage;
+export default ImageSection;

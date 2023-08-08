@@ -1,9 +1,9 @@
-import classes from "./DivWithBgImage.module.scss";
+import classes from './ImageCard.module.scss';
 
-const DivWithBgImage = (props) => {
+const ImageCard = (props) => {
   const style = {
     background: `url(${props.img}) no-repeat center`,
-    backgroundSize: "cover",
+    backgroundSize: 'cover',
   };
 
   if (props.addionalStyle) {
@@ -22,4 +22,4 @@ const DivWithBgImage = (props) => {
   );
 };
 
-export default DivWithBgImage;
+export default ImageCard;

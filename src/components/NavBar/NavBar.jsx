@@ -4,9 +4,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 
-import classes from './NavigationBar.module.scss';
+import classes from './NavBar.module.scss';
 
-const NavigationBar = (props) => {
+const NavBar = (props) => {
   const [pageScrolled, setPageScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState();
 
@@ -67,4 +67,4 @@ const NavigationBar = (props) => {
   );
 };
 
-export default NavigationBar;
+export default NavBar;

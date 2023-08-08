@@ -1,42 +1,42 @@
-import { useEffect, useState } from "react";
-import * as yup from "yup";
-import { Formik } from "formik";
-import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Button from "../../UI/Button";
-import emailjs from "emailjs-com";
-import Recaptcha from "react-recaptcha";
+import { useEffect, useState } from 'react';
+import * as yup from 'yup';
+import { Formik } from 'formik';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from '../Button/Button';
+import emailjs from 'emailjs-com';
+import Recaptcha from 'react-recaptcha';
 
-import classes from "./ContactForm.module.scss";
+import classes from './ContactForm.module.scss';
 
-import check from "../../../img/check.png";
-import error from "../../../img/error.png";
+import check from '../../img/check.png';
+import error from '../../img/error.png';
 
 const ContactForm = (props) => {
   const [thankYouMessage, setThankYouMessage] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
 
   const schema = yup.object().shape({
-    firstName: yup.string().required("First name field cannot be empty"),
-    lastName: yup.string().required("Last name field cannot be empty"),
+    firstName: yup.string().required('First name field cannot be empty'),
+    lastName: yup.string().required('Last name field cannot be empty'),
     email: yup
       .string()
-      .email("Invalid email")
-      .required("Email field cannot be empty"),
-    subject: yup.string().required("Subject field cannot be empty"),
-    message: yup.string().required("Message field cannot be empty"),
-    terms: yup.bool().required().oneOf([true], "Terms must be accepted"),
+      .email('Invalid email')
+      .required('Email field cannot be empty'),
+    subject: yup.string().required('Subject field cannot be empty'),
+    message: yup.string().required('Message field cannot be empty'),
+    terms: yup.bool().required().oneOf([true], 'Terms must be accepted'),
     recaptcha: yup.string().required(),
   });
 
   const sendEmail = (object) => {
     emailjs
       .send(
-        "service_t2zgtfk",
-        "template_qob5jyg",
+        'service_t2zgtfk',
+        'template_qob5jyg',
         object,
-        "user_vmDfARaoTTy0rfc7vp0Pn"
+        'user_vmDfARaoTTy0rfc7vp0Pn'
       )
       .then(
         (result) => {
@@ -44,14 +44,14 @@ const ContactForm = (props) => {
         },
         (error) => {
           setErrorMessage(true);
-          alert("An error occurred, Please try again later", error.text);
+          alert('An error occurred, Please try again later', error.text);
         }
       );
   };
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://www.google.com/recaptcha/api.js";
+    const script = document.createElement('script');
+    script.src = 'https://www.google.com/recaptcha/api.js';
     script.async = true;
     script.defer = true;
     document.body.appendChild(script);
@@ -61,7 +61,7 @@ const ContactForm = (props) => {
     <>
       {errorMessage && (
         <div className={classes.message}>
-          <img src={error} alt="error icon" />
+          <img src={error} alt='error icon' />
           <h3 className={classes.errorHeading}>
             An error occurred, Please try again.
           </h3>
@@ -69,20 +69,20 @@ const ContactForm = (props) => {
       )}
       {thankYouMessage && (
         <div className={classes.message}>
-          <img src={check} alt="check icon" />
+          <img src={check} alt='check icon' />
           <h3>Message Sent, I will get back to you shortly.</h3>
         </div>
       )}
       {!thankYouMessage && !errorMessage && (
         <Formik
           initialValues={{
-            firstName: "",
-            lastName: "",
-            email: "",
-            subject: "",
-            message: "",
+            firstName: '',
+            lastName: '',
+            email: '',
+            subject: '',
+            message: '',
             terms: false,
-            recaptcha: "",
+            recaptcha: '',
           }}
           validationSchema={schema}
           onSubmit={(values, actions) => {
@@ -103,121 +103,121 @@ const ContactForm = (props) => {
             errors,
           }) => (
             <Form noValidate onSubmit={handleSubmit} className={classes.form}>
-              <Row className="mb-3">
-                <Form.Group as={Col} controlId="validationFormik01">
+              <Row className='mb-3'>
+                <Form.Group as={Col} controlId='validationFormik01'>
                   <Form.Label>First name</Form.Label>
                   <Form.Control
-                    type="text"
-                    placeholder="Name"
-                    name="firstName"
+                    type='text'
+                    placeholder='Name'
+                    name='firstName'
                     value={values.firstName}
                     onChange={handleChange}
                     isValid={touched.firstName && !errors.firstName}
                     isInvalid={errors.firstName}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                  <Form.Control.Feedback type="invalid">
+                  <Form.Control.Feedback type='invalid'>
                     {errors.firstName}
                   </Form.Control.Feedback>
                 </Form.Group>
-                <div className="w-100 d-block d-sm-none"></div>
-                <Form.Group as={Col} controlId="validationFormik02">
+                <div className='w-100 d-block d-sm-none'></div>
+                <Form.Group as={Col} controlId='validationFormik02'>
                   <Form.Label>Last name</Form.Label>
                   <Form.Control
-                    type="text"
-                    placeholder="Surname"
-                    name="lastName"
+                    type='text'
+                    placeholder='Surname'
+                    name='lastName'
                     value={values.lastName}
                     onChange={handleChange}
                     isValid={touched.lastName && !errors.lastName}
                     isInvalid={touched.lastName && errors.lastName}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                  <Form.Control.Feedback type="invalid">
+                  <Form.Control.Feedback type='invalid'>
                     {errors.lastName}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Row>
-              <Row className="mb-3">
-                <Form.Group as={Col} md="9" controlId="validationFormik03">
+              <Row className='mb-3'>
+                <Form.Group as={Col} md='9' controlId='validationFormik03'>
                   <Form.Label>Email</Form.Label>
                   <Form.Control
-                    type="email"
-                    placeholder="Email"
-                    name="email"
+                    type='email'
+                    placeholder='Email'
+                    name='email'
                     value={values.email}
                     onChange={handleChange}
                     isValid={touched.email && !errors.email}
                     isInvalid={touched.email && errors.email}
                   />
-                  <Form.Text className="text-muted">
+                  <Form.Text className='text-muted'>
                     We'll never share your email with anyone else.
                   </Form.Text>
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                  <Form.Control.Feedback type="invalid">
+                  <Form.Control.Feedback type='invalid'>
                     {errors.email}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Row>
-              <Row className="mb-3">
-                <Form.Group as={Col} md="9" controlId="validationFormik04">
+              <Row className='mb-3'>
+                <Form.Group as={Col} md='9' controlId='validationFormik04'>
                   <Form.Label>Subject</Form.Label>
                   <Form.Control
-                    type="text"
-                    placeholder="Subject"
-                    name="subject"
+                    type='text'
+                    placeholder='Subject'
+                    name='subject'
                     value={values.subject}
                     onChange={handleChange}
                     isValid={touched.subject && !errors.subject}
                     isInvalid={touched.subject && errors.subject}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                  <Form.Control.Feedback type="invalid">
+                  <Form.Control.Feedback type='invalid'>
                     {errors.subject}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Row>
-              <Row className="mb-3">
-                <Form.Group as={Col} controlId="validationFormik05">
+              <Row className='mb-3'>
+                <Form.Group as={Col} controlId='validationFormik05'>
                   <Form.Label>Message</Form.Label>
                   <Form.Control
-                    type="text"
-                    placeholder="Your message"
-                    name="message"
+                    type='text'
+                    placeholder='Your message'
+                    name='message'
                     value={values.message}
                     onChange={handleChange}
-                    as="textarea"
+                    as='textarea'
                     rows={7}
                     isValid={touched.message && !errors.message}
                     isInvalid={touched.message && errors.message}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                  <Form.Control.Feedback type="invalid">
+                  <Form.Control.Feedback type='invalid'>
                     {errors.message}
                   </Form.Control.Feedback>
                 </Form.Group>
               </Row>
-              <Row className="mb-3">
-                <Form.Group className="mb-3">
+              <Row className='mb-3'>
+                <Form.Group className='mb-3'>
                   <Form.Check
                     required
-                    type="checkbox"
-                    name="terms"
-                    label="I agree to the processing of submitted personal data. My data will not be made available or provided to third parties or published without my consent."
+                    type='checkbox'
+                    name='terms'
+                    label='I agree to the processing of submitted personal data. My data will not be made available or provided to third parties or published without my consent.'
                     onChange={handleChange}
                     isInvalid={touched.terms && errors.terms}
                     feedback={errors.terms}
-                    id="validationFormik0"
+                    id='validationFormik0'
                   />
                 </Form.Group>
               </Row>
-              <Form.Group className="mb-3">
+              <Form.Group className='mb-3'>
                 <Recaptcha
-                  sitekey="6Le7f6QcAAAAAHnfnxsyGWwK43yNYnVNx-T_p-Ri"
-                  render="explicit"
-                  theme="light"
+                  sitekey='6Le7f6QcAAAAAHnfnxsyGWwK43yNYnVNx-T_p-Ri'
+                  render='explicit'
+                  theme='light'
                   verifyCallback={(response) => {
-                    setFieldValue("recaptcha", response);
+                    setFieldValue('recaptcha', response);
                   }}
                   onloadCallback={() => {
                     // console.log("Done loading!");
@@ -228,7 +228,7 @@ const ContactForm = (props) => {
                 )}
               </Form.Group>
 
-              <Button type="submit">Send me message</Button>
+              <Button type='submit'>Send me message</Button>
             </Form>
           )}
         </Formik>

@@ -1,8 +1,8 @@
-import Card from "../../UI/Card";
-import ContactForm from "./ContactForm";
-import CloseButton from "react-bootstrap/CloseButton";
+import Card from '../Card/Card';
+import ContactForm from '../ContactForm/ContactForm';
+import CloseButton from 'react-bootstrap/CloseButton';
 
-import classes from "./ContactModal.module.scss";
+import classes from './ContactModal.module.scss';
 
 const ContactModal = (props) => {
   return (
@@ -13,7 +13,7 @@ const ContactModal = (props) => {
           <h2>{props.title}</h2>
           <CloseButton
             className={classes.close}
-            variant="white"
+            variant='white'
             onClick={props.onClose}
           />
         </header>
