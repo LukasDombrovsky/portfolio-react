@@ -67,9 +67,15 @@ const additionalStyle = {
   backgroundSize: 'contain',
 };
 
-const TechStack = (props) => {
+export interface TechStackProps {
+  id: string;
+}
+
+const TechStack: React.FC<TechStackProps> = (props) => {
+  const { id } = props;
+
   return (
-    <div id={props.id} className={classes.techStack}>
+    <div id={id} className={classes.techStack}>
       <Container className='section-container'>
         <Row>
           <Col>
@@ -88,7 +94,7 @@ const TechStack = (props) => {
               >
                 <ImageCard
                   img={technology.image}
-                  addionalStyle={additionalStyle}
+                  additionalStyle={additionalStyle}
                   scaleOnHover={true}
                 />
               </a>
@@ -106,7 +112,7 @@ const TechStack = (props) => {
               >
                 <ImageCard
                   img={technology.image}
-                  addionalStyle={additionalStyle}
+                  additionalStyle={additionalStyle}
                   scaleOnHover={true}
                 />
               </a>

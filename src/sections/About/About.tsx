@@ -26,11 +26,17 @@ const About = () => {
       {/* Force next columns to break to new line at md breakpoint and down */}
       <div className='w-100 d-block d-md-none'></div>
       <Col>
-        <ImageCard img={aboutMe_1} addionalStyle={additionalStyle}></ImageCard>
+        <ImageCard
+          img={aboutMe_1}
+          additionalStyle={additionalStyle}
+        ></ImageCard>
       </Col>
       <div className='w-100 d-block d-md-none'></div>
       <Col>
-        <ImageCard img={aboutMe_2} addionalStyle={additionalStyle}></ImageCard>
+        <ImageCard
+          img={aboutMe_2}
+          additionalStyle={additionalStyle}
+        ></ImageCard>
       </Col>
     </Row>
   );

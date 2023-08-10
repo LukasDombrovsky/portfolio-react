@@ -4,7 +4,12 @@ import CloseButton from 'react-bootstrap/CloseButton';
 
 import classes from './ContactModal.module.scss';
 
-const ContactModal = (props) => {
+export interface ContactModalProps {
+  title: string;
+  onClose: () => void;
+}
+
+const ContactModal: React.FC<ContactModalProps> = (props) => {
   return (
     <div>
       <div className={classes.backdrop} onClick={props.onClose}></div>

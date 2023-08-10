@@ -34,7 +34,7 @@ const Projects = () => {
           <a href='https://mafex.sk/' rel='noreferrer' target='_blank'>
             <ImageCard
               img={projects_1}
-              addionalStyle={additionalStyle}
+              additionalStyle={additionalStyle}
               scaleOnHover={true}
             />
           </a>
@@ -53,7 +53,7 @@ const Projects = () => {
           >
             <ImageCard
               img={projects_2}
-              addionalStyle={additionalStyle}
+              additionalStyle={additionalStyle}
               scaleOnHover={true}
             />
           </a>
@@ -80,7 +80,7 @@ const Projects = () => {
           >
             <ImageCard
               img={projects_3}
-              addionalStyle={additionalStyle}
+              additionalStyle={additionalStyle}
               scaleOnHover={true}
             />
           </a>
@@ -107,7 +107,7 @@ const Projects = () => {
           >
             <ImageCard
               img={projects_4}
-              addionalStyle={additionalStyle}
+              additionalStyle={additionalStyle}
               scaleOnHover={true}
             />
           </a>

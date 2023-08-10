@@ -13,7 +13,9 @@ import classes from './ContactForm.module.scss';
 import check from '../../img/check.png';
 import error from '../../img/error.png';
 
-const ContactForm = (props) => {
+export interface ContactFormProps {}
+
+const ContactForm: React.FC<ContactFormProps> = (props) => {
   const [thankYouMessage, setThankYouMessage] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
 
@@ -30,7 +32,7 @@ const ContactForm = (props) => {
     recaptcha: yup.string().required(),
   });
 
-  const sendEmail = (object) => {
+  const sendEmail = (object: Record<string, unknown> | undefined) => {
     emailjs
       .send(
         'service_t2zgtfk',
@@ -44,7 +46,7 @@ const ContactForm = (props) => {
         },
         (error) => {
           setErrorMessage(true);
-          alert('An error occurred, Please try again later', error.text);
+          alert('An error occurred, Please try again later' + error.text);
         }
       );
   };
@@ -113,7 +115,7 @@ const ContactForm = (props) => {
                     value={values.firstName}
                     onChange={handleChange}
                     isValid={touched.firstName && !errors.firstName}
-                    isInvalid={errors.firstName}
+                    isInvalid={!!errors.firstName}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                   <Form.Control.Feedback type='invalid'>
@@ -130,7 +132,7 @@ const ContactForm = (props) => {
                     value={values.lastName}
                     onChange={handleChange}
                     isValid={touched.lastName && !errors.lastName}
-                    isInvalid={touched.lastName && errors.lastName}
+                    isInvalid={touched.lastName && !!errors.lastName}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                   <Form.Control.Feedback type='invalid'>
@@ -148,7 +150,7 @@ const ContactForm = (props) => {
                     value={values.email}
                     onChange={handleChange}
                     isValid={touched.email && !errors.email}
-                    isInvalid={touched.email && errors.email}
+                    isInvalid={touched.email && !!errors.email}
                   />
                   <Form.Text className='text-muted'>
                     We'll never share your email with anyone else.
@@ -169,7 +171,7 @@ const ContactForm = (props) => {
                     value={values.subject}
                     onChange={handleChange}
                     isValid={touched.subject && !errors.subject}
-                    isInvalid={touched.subject && errors.subject}
+                    isInvalid={touched.subject && !!errors.subject}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                   <Form.Control.Feedback type='invalid'>
@@ -189,7 +191,7 @@ const ContactForm = (props) => {
                     as='textarea'
                     rows={7}
                     isValid={touched.message && !errors.message}
-                    isInvalid={touched.message && errors.message}
+                    isInvalid={touched.message && !!errors.message}
                   />
                   <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                   <Form.Control.Feedback type='invalid'>
@@ -205,7 +207,7 @@ const ContactForm = (props) => {
                     name='terms'
                     label='I agree to the processing of submitted personal data. My data will not be made available or provided to third parties or published without my consent.'
                     onChange={handleChange}
-                    isInvalid={touched.terms && errors.terms}
+                    isInvalid={touched.terms && !!errors.terms}
                     feedback={errors.terms}
                     id='validationFormik0'
                   />

@@ -9,9 +9,15 @@ import classes from './Home.module.scss';
 import logo from '../../img/coding.png';
 import bgImage from '../../img/cover.png';
 
-const Home = (props) => {
+export interface HomeProps {
+  id: string;
+}
+
+const Home: React.FC<HomeProps> = (props) => {
+  const { id } = props;
+
   return (
-    <ImageSection id={props.id} bgImage={bgImage} className={classes.home}>
+    <ImageSection id={id} bgImage={bgImage} className={classes.home}>
       <Container>
         <Row>
           <Col className={classes.headline}>
