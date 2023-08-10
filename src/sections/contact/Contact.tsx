@@ -17,12 +17,6 @@ const Contact = () => {
     setContactFormOpened(false);
   };
 
-  // const submitContactFormHandler = (values: any) => {
-  //   // sent data to my email
-  //   setContactFormOpened(false);
-  //   console.log(values);
-  // };
-
   return (
     <>
       {contactFormOpened && (
