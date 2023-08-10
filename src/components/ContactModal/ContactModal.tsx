@@ -10,16 +10,18 @@ export interface ContactModalProps {
 }
 
 const ContactModal: React.FC<ContactModalProps> = (props) => {
+  const { title, onClose } = props;
+
   return (
     <div>
-      <div className={classes.backdrop} onClick={props.onClose}></div>
+      <div className={classes.backdrop} onClick={onClose}></div>
       <Card className={classes.modal}>
         <header className={classes.header}>
-          <h2>{props.title}</h2>
+          <h2>{title}</h2>
           <CloseButton
             className={classes.close}
             variant='white'
-            onClick={props.onClose}
+            onClick={onClose}
           />
         </header>
         <div className={classes.content}>

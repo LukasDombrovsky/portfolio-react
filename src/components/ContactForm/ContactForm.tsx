@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import * as yup from 'yup';
 import { Formik } from 'formik';
 import Form from 'react-bootstrap/Form';
@@ -32,32 +32,40 @@ const ContactForm: React.FC<ContactFormProps> = (props) => {
     recaptcha: yup.string().required(),
   });
 
-  const sendEmail = (object: Record<string, unknown> | undefined) => {
-    emailjs
-      .send(
-        'service_t2zgtfk',
-        'template_qob5jyg',
-        object,
-        'user_vmDfARaoTTy0rfc7vp0Pn'
-      )
-      .then(
-        (result) => {
-          setThankYouMessage(true);
-        },
-        (error) => {
-          setErrorMessage(true);
-          alert('An error occurred, Please try again later' + error.text);
-        }
-      );
+  const sendEmail = (values: {
+    firstName: string;
+    lastName: string;
+    email: string;
+    subject: string;
+    message: string;
+    terms: boolean;
+    recaptcha: string;
+  }) => {
+    if (
+      !process.env.REACT_APP_SERVICE_ID ||
+      !process.env.REACT_APP_TEMPLATE_ID ||
+      !process.env.REACT_APP_PUBLIC_KEY
+    ) {
+      console.error('Environment variables not set!');
+    } else {
+      emailjs
+        .send(
+          process.env.REACT_APP_SERVICE_ID,
+          process.env.REACT_APP_TEMPLATE_ID,
+          values,
+          process.env.REACT_APP_PUBLIC_KEY
+        )
+        .then(
+          (result) => {
+            setThankYouMessage(true);
+          },
+          (error) => {
+            setErrorMessage(true);
+            alert('An error occurred, Please try again later' + error.text);
+          }
+        );
+    }
   };
-
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://www.google.com/recaptcha/api.js';
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-  }, []);
 
   return (
     <>

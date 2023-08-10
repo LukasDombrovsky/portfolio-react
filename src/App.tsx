@@ -2,7 +2,7 @@ import Navbar from './components/NavBar/NavBar';
 import About from './sections/About/About';
 import Projects from './sections/Projects/Projects';
 import TechStack from './sections/TechStack/TechStack';
-import Contact from './sections/contact/Contact';
+import Contact from './sections/Contact/Contact';
 import Section from './components/Section/Section';
 import Home from './sections/Home/Home';
 
