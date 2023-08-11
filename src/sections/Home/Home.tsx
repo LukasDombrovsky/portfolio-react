@@ -7,7 +7,7 @@ import ImageSection from '../../components/ImageSection/ImageSection';
 import classes from './Home.module.scss';
 
 import logo from '../../img/coding.png';
-import bgImage from '../../img/cover.png';
+import bgImage from '../../img/cover.jpg';
 
 export interface HomeProps {
   id: string;
@@ -22,9 +22,9 @@ const Home: React.FC<HomeProps> = (props) => {
         <Row>
           <Col className={classes.headline}>
             <h1 className='display-3'>
-              Welcome on my
+              Welcome to my
               <div className='w-100'></div>
-              portfolio page
+              portfolio site!
             </h1>
             <Button type='button' href='#projects'>
               See my past projects
