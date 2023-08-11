@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from '../Button/Button';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import Recaptcha from 'react-recaptcha';
 
 import classes from './ContactForm.module.scss';
