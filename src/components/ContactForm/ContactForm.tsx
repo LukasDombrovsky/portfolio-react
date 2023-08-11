@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from '../Button/Button';
 import emailjs from '@emailjs/browser';
-import Recaptcha from 'react-recaptcha';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 import classes from './ContactForm.module.scss';
 
@@ -222,17 +222,15 @@ const ContactForm: React.FC<ContactFormProps> = (props) => {
                 </Form.Group>
               </Row>
               <Form.Group className='mb-3'>
-                <Recaptcha
-                  sitekey='6Le7f6QcAAAAAHnfnxsyGWwK43yNYnVNx-T_p-Ri'
-                  render='explicit'
-                  theme='light'
-                  verifyCallback={(response) => {
-                    setFieldValue('recaptcha', response);
-                  }}
-                  onloadCallback={() => {
-                    // console.log("Done loading!");
-                  }}
-                />
+                {process.env.REACT_APP_reCAPTCHA_SITE_KEY && (
+                  <ReCAPTCHA
+                    sitekey={process.env.REACT_APP_reCAPTCHA_SITE_KEY}
+                    theme='light'
+                    onChange={(value) => {
+                      setFieldValue('recaptcha', value);
+                    }}
+                  />
+                )}
                 {errors.recaptcha && touched.recaptcha && (
                   <p className={classes.error}>{errors.recaptcha}</p>
                 )}
