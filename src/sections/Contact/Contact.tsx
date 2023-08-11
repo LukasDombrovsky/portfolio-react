@@ -50,7 +50,7 @@ const Contact = () => {
         <div
           className={`col d-flex justify-content-center ${classes.copyright}`}
         >
-          Copyright ©2021 All rights reserved | Ing. Lukas Dombrovsky
+          Copyright ©2023 All rights reserved | Ing. Lukas Dombrovsky
         </div>
       </Row>
     </>
