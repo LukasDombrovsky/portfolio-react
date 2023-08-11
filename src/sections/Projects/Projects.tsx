@@ -23,9 +23,9 @@ const Projects = () => {
         <Col>
           <h1 className='display-5'>My past projects</h1>
           <p className={classes['main-text']}>
-            Here you can find portfolio of my past projects. Originally they
-            were written in different languages and technolgies, but I rewrited
-            most of them with React.
+            Here you can find portfolio of my past projects. The oldest ones are
+            my university projects, some of them are websites for small
+            businesses and the others are my personal demo projects.
           </p>
         </Col>
       </Row>
