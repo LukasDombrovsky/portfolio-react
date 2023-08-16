@@ -11,9 +11,17 @@ export interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = (props) => {
+  const { children, type, href, target, onClick } = props;
+
   return (
-    <Btn className={classes.button} {...props}>
-      {props.children}
+    <Btn
+      className={classes.button}
+      type={type}
+      href={href}
+      target={target}
+      onClick={onClick}
+    >
+      <span>{children}</span>
     </Btn>
   );
 };

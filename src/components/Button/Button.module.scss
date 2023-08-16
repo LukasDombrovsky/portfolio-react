@@ -1,7 +1,29 @@
+@import '../../variables';
+
 .button {
   font-size: 1.2rem;
+  font-weight: 800;
   border: none;
-  background: #237acc;
   padding: 10px 30px;
-  margin: 1rem 0.25rem 2rem 0.25rem;
+  margin: 1rem 0.25rem 2rem 0;
+  border-radius: 30px;
+  color: $black;
+  background: $gray;
+
+  &:hover {
+    background: $gray-hover;
+    cursor: pointer;
+  }
+
+  &:focus {
+    background: $gray-hover;
+    cursor: pointer;
+  }
+
+  & span {
+    background: $gradient;
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }

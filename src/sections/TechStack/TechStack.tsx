@@ -60,10 +60,9 @@ const technologies = {
   ],
 };
 
-const additionalStyle = {
+const cardStyle = {
   minHeight: '9rem',
   margin: '1rem 0',
-  transition: 'transform 400ms ease-out',
   backgroundSize: 'contain',
 };
 
@@ -94,8 +93,8 @@ const TechStack: React.FC<TechStackProps> = (props) => {
               >
                 <ImageCard
                   img={technology.image}
-                  additionalStyle={additionalStyle}
-                  scaleOnHover={true}
+                  scaleOnHover
+                  additionalStyle={cardStyle}
                 />
               </a>
             </Col>
@@ -112,8 +111,8 @@ const TechStack: React.FC<TechStackProps> = (props) => {
               >
                 <ImageCard
                   img={technology.image}
-                  additionalStyle={additionalStyle}
-                  scaleOnHover={true}
+                  scaleOnHover
+                  additionalStyle={cardStyle}
                 />
               </a>
             </Col>

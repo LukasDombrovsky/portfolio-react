@@ -1,8 +1,4 @@
-@import "../../variables";
-
-.display-5 {
-  margin-top: 3.5rem;
-}
+@import '../../variables';
 
 .maxWidthSet {
   @media #{$md} {

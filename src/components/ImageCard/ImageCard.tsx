@@ -4,11 +4,10 @@ interface ImageCardProps {
   img: string;
   additionalStyle?: { [key: string]: string };
   scaleOnHover?: boolean;
-  children?: React.ReactNode;
 }
 
 const ImageCard: React.FC<ImageCardProps> = (props) => {
-  const { img, additionalStyle, scaleOnHover, children } = props;
+  const { img, additionalStyle, scaleOnHover } = props;
 
   const style: { [key: string]: string } = {
     background: `url(${img}) no-repeat center`,
@@ -16,15 +15,16 @@ const ImageCard: React.FC<ImageCardProps> = (props) => {
   };
 
   if (additionalStyle) {
-    Object.keys(additionalStyle).map((k) => {
-      return (style[k] = additionalStyle[k]);
+    Object.keys(additionalStyle).forEach((k) => {
+      style[k] = additionalStyle[k];
     });
   }
 
   return (
-    <div style={style} className={scaleOnHover ? classes.scaleOnHover : ''}>
-      {children}
-    </div>
+    <div
+      style={style}
+      className={scaleOnHover ? classes.scaleOnHover : ''}
+    ></div>
   );
 };
 

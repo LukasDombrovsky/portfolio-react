@@ -15,17 +15,23 @@ function App() {
         brand='Lukas Dombrovsky'
         homeLink='home'
         links={['about', 'projects', 'techStack', 'contact']}
-        expand='md'
+        expand='lg'
       />
       <Home id='home' />
       <Section id='about'>
         <About />
       </Section>
-      <Section id='projects'>
+      <Section
+        id='projects'
+        background='linear-gradient(135deg, #2a0634, #462bc9)'
+      >
         <Projects />
       </Section>
       <TechStack id='techStack' />
-      <Section id='contact'>
+      <Section
+        id='contact'
+        background='linear-gradient(135deg, #2a0634, #462bc9)'
+      >
         <Contact />
       </Section>
     </>

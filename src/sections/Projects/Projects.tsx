@@ -11,17 +11,16 @@ import projects_4 from '../../img/stockPredict-link.png';
 import ImageCard from '../../components/ImageCard/ImageCard';
 
 const Projects = () => {
-  const additionalStyle = {
+  const cardStyle = {
     minHeight: '21rem',
     margin: '1rem 0',
-    transition: 'transform 400ms ease-out',
   };
 
   return (
     <>
       <Row>
         <Col>
-          <h1 className='display-5'>My past projects</h1>
+          <h1 className='display-5 section-headline'>My past projects</h1>
           <p className={classes['main-text']}>
             Here you can find portfolio of my past projects. The oldest ones are
             my university projects, some of them are websites for small
@@ -34,11 +33,11 @@ const Projects = () => {
           <a href='https://mafex.sk/' rel='noreferrer' target='_blank'>
             <ImageCard
               img={projects_1}
-              additionalStyle={additionalStyle}
-              scaleOnHover={true}
+              scaleOnHover
+              additionalStyle={cardStyle}
             />
           </a>
-          <h1 className='display-6'>Mafex</h1>
+          <h2>Mafex</h2>
           <p>Presentational website built for construction company.</p>
           <Button type='button' href='https://mafex.sk/' target='_blank'>
             Open app
@@ -53,11 +52,11 @@ const Projects = () => {
           >
             <ImageCard
               img={projects_2}
-              additionalStyle={additionalStyle}
-              scaleOnHover={true}
+              scaleOnHover
+              additionalStyle={cardStyle}
             />
           </a>
-          <h1 className='display-6'>Crypto Dashboard</h1>
+          <h2>Crypto Dashboard</h2>
           <p>
             My diploma’s project which used machine learning for cryptocurrency
             pattern analysis.
@@ -80,11 +79,11 @@ const Projects = () => {
           >
             <ImageCard
               img={projects_3}
-              additionalStyle={additionalStyle}
-              scaleOnHover={true}
+              scaleOnHover
+              additionalStyle={cardStyle}
             />
           </a>
-          <h1 className='display-6'>Twitter Insights</h1>
+          <h2>Twitter Insights</h2>
           <p>
             Twitter insights dashboard is web application that collects data
             from public Twitter posts, analyzes them and visualize the results
@@ -107,11 +106,11 @@ const Projects = () => {
           >
             <ImageCard
               img={projects_4}
-              additionalStyle={additionalStyle}
-              scaleOnHover={true}
+              scaleOnHover
+              additionalStyle={cardStyle}
             />
           </a>
-          <h1 className='display-6'>Stock Predict</h1>
+          <h2>Stock Predict</h2>
           <p>
             My bachelor’s thesis application about monitoring financial markets
             in cloud using predictive algorithms.

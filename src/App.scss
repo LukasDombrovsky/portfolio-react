@@ -1,18 +1,20 @@
+@import './variables';
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Bangers', cursive;
-  color: white;
-  background-color: #000000;
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  color: $white;
+  background-color: $black;
 }
 
 p {
   font-family: Poppins, sans-serif;
   font-size: 1.1rem;
   line-height: 1.7;
-  margin-top: 1.5rem;
   max-width: 100%;
   font-weight: 500;
 }
@@ -20,4 +22,8 @@ p {
 .section-container {
   margin-top: 5rem;
   margin-bottom: 5rem;
+}
+
+.section-headline {
+  font-weight: 600;
 }

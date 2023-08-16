@@ -1,37 +1,49 @@
-@import "../../variables";
+@import '../../variables';
 
 .home {
   min-height: 100vh;
 
   img {
-    height: 8rem;
+    max-height: 250px;
 
     @media #{$sm} {
-      height: 12rem;
+      max-height: 300px;
     }
     @media #{$md} {
-      height: 13rem;
+      max-height: 400px;
     }
     @media #{$lg} {
-      height: 16rem;
+      max-height: 400px;
     }
     @media #{$xl} {
-      height: 16rem;
+      max-height: 400px;
     }
     @media #{$xxl} {
-      height: 16rem;
+      max-height: 400px;
     }
-  }
-
-  // Thin outline of heading on background picture
-  h1 {
-    -webkit-text-stroke: 0.5px black;
-    -webkit-text-fill-color: white;
   }
 
   .headline {
-    @media #{$xs} {
-      text-align: center;
+    font-weight: 800;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media #{$md} {
+      align-items: flex-start;
+    }
+    @media #{$lg} {
+      align-items: flex-start;
+    }
+    @media #{$xl} {
+      align-items: flex-start;
+    }
+    @media #{$xxl} {
+      align-items: flex-start;
     }
   }
 }
