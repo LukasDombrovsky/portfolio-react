@@ -1,6 +1,6 @@
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from '../../components/Button/Button';
+import Project from '../../components/Project/Project';
 
 import classes from './Projects.module.scss';
 
@@ -8,7 +8,6 @@ import projects_1 from '../../img/mafex-link.png';
 import projects_2 from '../../img/cryptoDashboard-link.png';
 import projects_3 from '../../img/twitterInsights-link.png';
 import projects_4 from '../../img/stockPredict-link.png';
-import ImageCard from '../../components/ImageCard/ImageCard';
 
 const Projects = () => {
   const cardStyle = {
@@ -30,98 +29,44 @@ const Projects = () => {
       </Row>
       <Row>
         <Col>
-          <a href='https://mafex.sk/' rel='noreferrer' target='_blank'>
-            <ImageCard
-              img={projects_1}
-              scaleOnHover
-              additionalStyle={cardStyle}
-            />
-          </a>
-          <h2>Mafex</h2>
-          <p>Presentational website built for construction company.</p>
-          <Button type='button' href='https://mafex.sk/' target='_blank'>
-            Open app
-          </Button>
+          <Project
+            href='https://mafex.sk/'
+            img={projects_1}
+            title='Mafex'
+            description='Presentational website built for construction company.'
+            cardStyle={cardStyle}
+          />
         </Col>
         <div className='w-100 d-block d-md-none'></div>
         <Col>
-          <a
+          <Project
             href='https://crypto-dashboard-react.web.app/'
-            rel='noreferrer'
-            target='_blank'
-          >
-            <ImageCard
-              img={projects_2}
-              scaleOnHover
-              additionalStyle={cardStyle}
-            />
-          </a>
-          <h2>Crypto Dashboard</h2>
-          <p>
-            My diploma’s project which used machine learning for cryptocurrency
-            pattern analysis.
-          </p>
-          <Button
-            type='button'
-            href='https://crypto-dashboard-react.web.app/'
-            target='_blank'
-          >
-            Open app
-          </Button>
+            img={projects_2}
+            title='Crypto Dashboard'
+            description='My diploma’s project which used machine learning for cryptocurrency pattern analysis.'
+            cardStyle={cardStyle}
+          />
         </Col>
       </Row>
       <Row>
         <Col>
-          <a
+          <Project
             href='https://twitter-insights-react.web.app/'
-            rel='noreferrer'
-            target='_blank'
-          >
-            <ImageCard
-              img={projects_3}
-              scaleOnHover
-              additionalStyle={cardStyle}
-            />
-          </a>
-          <h2>Twitter Insights</h2>
-          <p>
-            Twitter insights dashboard is web application that collects data
-            from public Twitter posts, analyzes them and visualize the results
-            on custom widgets.
-          </p>
-          <Button
-            type='button'
-            href='https://twitter-insights-react.web.app/'
-            target='_blank'
-          >
-            Open app
-          </Button>
+            img={projects_3}
+            title='Twitter Insights'
+            description='Twitter insights dashboard is web application that collects data from public Twitter posts, analyzes them and visualize the results on custom widgets.'
+            cardStyle={cardStyle}
+          />
         </Col>
         <div className='w-100 d-block d-md-none'></div>
         <Col>
-          <a
+          <Project
             href='https://stock-predict-b6b9d.web.app/'
-            rel='noreferrer'
-            target='_blank'
-          >
-            <ImageCard
-              img={projects_4}
-              scaleOnHover
-              additionalStyle={cardStyle}
-            />
-          </a>
-          <h2>Stock Predict</h2>
-          <p>
-            My bachelor’s thesis application about monitoring financial markets
-            in cloud using predictive algorithms.
-          </p>
-          <Button
-            type='button'
-            href='https://stock-predict-b6b9d.web.app/'
-            target='_blank'
-          >
-            Open app
-          </Button>
+            img={projects_4}
+            title='Stock Predict'
+            description='My bachelor’s thesis application about monitoring financial markets in cloud using predictive algorithms.'
+            cardStyle={cardStyle}
+          />
         </Col>
       </Row>
     </>

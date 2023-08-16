@@ -12,6 +12,7 @@ import tech_5 from '../../img/techStack-5.png';
 import tech_6 from '../../img/techStack-6.png';
 import tech_7 from '../../img/techStack-7.png';
 import tech_8 from '../../img/techStack-8.png';
+import tech_9 from '../../img/techStack-9.png';
 
 const technologies = {
   firstRow: [
@@ -21,41 +22,48 @@ const technologies = {
       image: tech_1,
     },
     {
-      name: 'JavaScript',
-      link: 'https://www.javascript.com/',
+      name: 'TypeScript',
+      link: 'https://www.npmjs.com/package/typescript',
       image: tech_2,
     },
     {
-      name: 'CSS',
-      link: 'https://www.w3.org/Style/CSS/Overview.en.html',
+      name: 'JavaScript',
+      link: 'https://www.javascript.com/',
       image: tech_3,
-    },
-    {
-      name: 'Redux',
-      link: 'https://reactjs.org/',
-      image: tech_4,
     },
   ],
   secondRow: [
     {
-      name: 'TypeScript',
-      link: 'https://www.npmjs.com/package/typescript',
+      name: 'Next.js',
+      link: 'https://nextjs.org/',
+      image: tech_4,
+    },
+    {
+      name: 'Redux',
+      link: 'https://reactjs.org/',
       image: tech_5,
     },
     {
-      name: 'Next.js',
-      link: 'https://nextjs.org/',
+      name: 'Tailwind CSS',
+      link: 'https://tailwindcss.com/',
       image: tech_6,
+    },
+  ],
+  thirdRow: [
+    {
+      name: 'Material UI',
+      link: 'https://material-ui.com/',
+      image: tech_7,
     },
     {
       name: 'Bootstrap',
       link: 'https://getbootstrap.com/',
-      image: tech_7,
+      image: tech_8,
     },
     {
-      name: 'SASS',
-      link: 'https://sass-lang.com/',
-      image: tech_8,
+      name: 'Ant Design',
+      link: 'https://ant.design/',
+      image: tech_9,
     },
   ],
 };
@@ -78,7 +86,7 @@ const TechStack: React.FC<TechStackProps> = (props) => {
       <Container className='section-container'>
         <Row>
           <Col>
-            <h1 className='display-5'>My tech stack</h1>
+            <h1 className='display-5 section-headline'>My tech stack</h1>
             <p>I actively use following technologies and libraries:</p>
           </Col>
         </Row>
@@ -102,6 +110,24 @@ const TechStack: React.FC<TechStackProps> = (props) => {
         </Row>
         <Row>
           {technologies.secondRow.map((technology) => (
+            <Col key={technology.name}>
+              <a
+                href={technology.link}
+                rel='noreferrer'
+                target='_blank'
+                title={technology.name}
+              >
+                <ImageCard
+                  img={technology.image}
+                  scaleOnHover
+                  additionalStyle={cardStyle}
+                />
+              </a>
+            </Col>
+          ))}
+        </Row>
+        <Row>
+          {technologies.thirdRow.map((technology) => (
             <Col key={technology.name}>
               <a
                 href={technology.link}
