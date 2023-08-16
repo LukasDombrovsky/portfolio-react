@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 .contact-row {
   margin-top: 0;
 }
@@ -12,4 +14,23 @@
   margin: 4rem 0;
   color: rgb(133, 130, 130);
   text-align: center;
+}
+
+.socialIcons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+  margin-top: 3rem;
+}
+
+.socialIcon {
+  width: 50px;
+  height: 50px;
+  color: $white;
+
+  &:hover {
+    cursor: pointer;
+    scale: 1.1;
+  }
 }

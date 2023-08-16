@@ -6,6 +6,10 @@ import ContactModal from '../../components/ContactModal/ContactModal';
 
 import classes from './Contact.module.scss';
 
+import email from '../../img/icons/email.svg';
+import linkedIn from '../../img/icons/linkedIn.svg';
+import github from '../../img/icons/gitHub.svg';
+
 const Contact = () => {
   const [contactFormOpened, setContactFormOpened] = useState(false);
 
@@ -22,24 +26,40 @@ const Contact = () => {
       {contactFormOpened && (
         <ContactModal title='Contact form' onClose={closeContactFormHandler} />
       )}
-      <Row>
+      <Row style={{ marginBottom: '32px' }}>
         <Col>
-          <h1 className='display-5'>Contact</h1>
+          <h1 className='display-5 section-headline'>Contact</h1>
         </Col>
       </Row>
       <Row>
         <Col>
-          <p>Ing. Lukas Dombrovsky</p>
-          <p className={classes['contact-row']}>lukas.dombrovsky@gmail.com</p>
-          <p className={classes['contact-row']}>+421 940 063 988</p>
-          <p className={classes['contact-row']}>
-            <a href='linkedin.com/in/lukasdombrovsky' target='_blank'>
-              linkedin.com/in/lukasdombrovsky
+          <h2>Get In Touch</h2>
+          <p className={classes.socialIcons}>
+            <a href='mailto:lukas.dombrovsky@gmail.com'>
+              <img src={email} alt='email' className={classes.socialIcon} />
+            </a>
+            <a
+              href='https://linkedin.com/in/lukasdombrovsky'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <img
+                src={linkedIn}
+                alt='linkedIn'
+                className={classes.socialIcon}
+              />
+            </a>
+            <a
+              href='https://github.com/LukasDombrovsky'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <img src={github} alt='github' className={classes.socialIcon} />
             </a>
           </p>
         </Col>
         <Col>
-          <h1 className={classes['display-6']}>Contact form</h1>
+          <h2>Contact form</h2>
           <p>You can also contact me directly through this form.</p>
           <Button type='button' onClick={openContactFormHandler}>
             Send me message
