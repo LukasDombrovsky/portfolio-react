@@ -17,7 +17,6 @@ const NavBar: React.FC<NavBarProps> = (props) => {
   const { brand, homeLink, links, expand } = props;
 
   const [pageScrolled, setPageScrolled] = useState(false);
-  const [activeLink, setActiveLink] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,19 +30,10 @@ const NavBar: React.FC<NavBarProps> = (props) => {
     };
   }, []);
 
-  const linkClickHandler = (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-  ) => {
-    setActiveLink(e.currentTarget.innerHTML);
-  };
-
   const linksFormatted = links.map((link) => (
     <a
       key={link}
-      className={`${classes.link} ${
-        activeLink === link ? classes.active : ''
-      } ${pageScrolled ? classes.scrolled : ''}`}
-      onClick={linkClickHandler}
+      className={`${classes.link} ${pageScrolled ? classes.scrolled : ''}`}
       href={`#${link}`}
     >
       {link}
@@ -61,7 +51,6 @@ const NavBar: React.FC<NavBarProps> = (props) => {
         <Navbar.Brand
           className={`${classes.brand} ${pageScrolled && classes.scrolled}`}
           href={`#${homeLink}`}
-          onClick={linkClickHandler}
         >
           {typeof brand === 'string' &&
           (brand.includes('jpg') || brand.includes('png')) ? (

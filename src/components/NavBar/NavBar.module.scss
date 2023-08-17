@@ -20,20 +20,12 @@
       color: $red !important;
     }
 
-    &.active {
-      color: $blue;
-    }
-
     &.scrolled {
       color: $black;
       background: $gradient;
       background-clip: border-box;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-
-      &.active {
-        color: $blue;
-      }
     }
   }
 
