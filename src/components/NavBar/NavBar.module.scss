@@ -39,6 +39,20 @@
 
   .collapse {
     justify-content: flex-end;
+
+    @media #{$xs} {
+      background-color: $white;
+    }
+
+    .link {
+      @media #{$xs} {
+        color: $black;
+        background: $gradient;
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
   }
 
   .brand {

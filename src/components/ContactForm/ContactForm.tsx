@@ -41,30 +41,17 @@ const ContactForm: React.FC<ContactFormProps> = (props) => {
     terms: boolean;
     recaptcha: string;
   }) => {
-    if (
-      !process.env.REACT_APP_SERVICE_ID ||
-      !process.env.REACT_APP_TEMPLATE_ID ||
-      !process.env.REACT_APP_PUBLIC_KEY
-    ) {
-      console.error('Environment variables not set!');
-    } else {
-      emailjs
-        .send(
-          process.env.REACT_APP_SERVICE_ID,
-          process.env.REACT_APP_TEMPLATE_ID,
-          values,
-          process.env.REACT_APP_PUBLIC_KEY
-        )
-        .then(
-          (result) => {
-            setThankYouMessage(true);
-          },
-          (error) => {
-            setErrorMessage(true);
-            alert('An error occurred, Please try again later' + error.text);
-          }
-        );
-    }
+    emailjs
+      .send('service_iior77p', 'template_utx6ldx', values, 'qjUi92l0rApn_A14S')
+      .then(
+        (result) => {
+          setThankYouMessage(true);
+        },
+        (e) => {
+          setErrorMessage(true);
+          alert('An error occurred, Please try again later' + e.text);
+        }
+      );
   };
 
   return (
@@ -222,15 +209,13 @@ const ContactForm: React.FC<ContactFormProps> = (props) => {
                 </Form.Group>
               </Row>
               <Form.Group className='mb-3'>
-                {process.env.REACT_APP_RECAPTCHA_SITE_KEY && (
-                  <ReCAPTCHA
-                    sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
-                    theme='light'
-                    onChange={(value) => {
-                      setFieldValue('recaptcha', value);
-                    }}
-                  />
-                )}
+                <ReCAPTCHA
+                  sitekey='6Le7f6QcAAAAAHnfnxsyGWwK43yNYnVNx-T_p-Ri'
+                  theme='light'
+                  onChange={(value) => {
+                    setFieldValue('recaptcha', value);
+                  }}
+                />
                 {errors.recaptcha && touched.recaptcha && (
                   <p className={classes.error}>{errors.recaptcha}</p>
                 )}
