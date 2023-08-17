@@ -222,9 +222,9 @@ const ContactForm: React.FC<ContactFormProps> = (props) => {
                 </Form.Group>
               </Row>
               <Form.Group className='mb-3'>
-                {process.env.REACT_APP_reCAPTCHA_SITE_KEY && (
+                {process.env.REACT_APP_RECAPTCHA_SITE_KEY && (
                   <ReCAPTCHA
-                    sitekey={process.env.REACT_APP_reCAPTCHA_SITE_KEY}
+                    sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
                     theme='light'
                     onChange={(value) => {
                       setFieldValue('recaptcha', value);
