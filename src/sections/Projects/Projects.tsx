@@ -8,6 +8,8 @@ import projects_1 from '../../img/mafex-link.png';
 import projects_2 from '../../img/cryptoDashboard-link.png';
 import projects_3 from '../../img/twitterInsights-link.png';
 import projects_4 from '../../img/stockPredict-link.png';
+import projects_5 from '../../img/JozefKravec-link.png';
+import projects_6 from '../../img/UkCovid-link.png';
 
 const Projects = () => {
   const cardStyle = {
@@ -30,10 +32,33 @@ const Projects = () => {
       <Row>
         <Col>
           <Project
+            href='https://uk-covid-statistics.web.app/'
+            img={projects_6}
+            title='UK Covid statistics'
+            description='This is a demo app which gets data from UK Covid dataset, processes it and visualises results on G2 charts.'
+            techStack='Next.js | ReactJs | TypeScript | Ant Design | G2'
+            cardStyle={cardStyle}
+          />
+        </Col>
+        <Col>
+          <Project
+            href='https://jozefkravec-4b52e.web.app/'
+            img={projects_5}
+            title='Jozef Kravec'
+            description='Presentational website built for company focusing on plumbing, heating and gas services.'
+            techStack='ReactJs | TypeScript | Material UI'
+            cardStyle={cardStyle}
+          />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Project
             href='https://mafex.sk/'
             img={projects_1}
             title='Mafex'
-            description='Presentational website built for construction company.'
+            description='Presentational website built for construction company focusing on multiple services.'
+            techStack='JavaScript | Bootstrap'
             cardStyle={cardStyle}
           />
         </Col>
@@ -44,6 +69,7 @@ const Projects = () => {
             img={projects_2}
             title='Crypto Dashboard'
             description='My diploma’s project which used machine learning for cryptocurrency pattern analysis.'
+            techStack='ReactJs | TypeScript | Bootstrap'
             cardStyle={cardStyle}
           />
         </Col>
@@ -55,6 +81,7 @@ const Projects = () => {
             img={projects_3}
             title='Twitter Insights'
             description='Twitter insights dashboard is web application that collects data from public Twitter posts, analyzes them and visualize the results on custom widgets.'
+            techStack='JavaScript | Bootstrap'
             cardStyle={cardStyle}
           />
         </Col>
@@ -65,6 +92,7 @@ const Projects = () => {
             img={projects_4}
             title='Stock Predict'
             description='My bachelor’s thesis application about monitoring financial markets in cloud using predictive algorithms.'
+            techStack='JavaScript | Bootstrap'
             cardStyle={cardStyle}
           />
         </Col>

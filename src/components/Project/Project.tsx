@@ -7,10 +7,11 @@ export interface ProjectProps {
   title: string;
   description: string;
   cardStyle?: { [key: string]: string };
+  techStack: string;
 }
 
 const Project: React.FC<ProjectProps> = (props) => {
-  const { href, img, title, description, cardStyle } = props;
+  const { href, img, title, description, cardStyle, techStack } = props;
 
   return (
     <>
@@ -19,6 +20,7 @@ const Project: React.FC<ProjectProps> = (props) => {
       </a>
       <h2>{title}</h2>
       <p>{description}</p>
+      <p>{techStack}</p>
       <Button type='button' href={href ? href : ''} target='_blank'>
         Open app
       </Button>
