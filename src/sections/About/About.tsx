@@ -11,6 +11,7 @@ const About = () => {
   const cardStyle = {
     minHeight: '25rem',
     margin: '0.5rem 0',
+    backgroundSize: 'cover',
   };
 
   return (

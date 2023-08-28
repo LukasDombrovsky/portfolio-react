@@ -15,6 +15,7 @@ const Projects = () => {
   const cardStyle = {
     minHeight: '21rem',
     margin: '1rem 0',
+    backgroundSize: 'cover',
   };
 
   return (

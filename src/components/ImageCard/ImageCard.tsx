@@ -1,3 +1,4 @@
+import React, { useState, useEffect, useRef } from 'react';
 import classes from './ImageCard.module.scss';
 
 interface ImageCardProps {
@@ -9,21 +10,43 @@ interface ImageCardProps {
 const ImageCard: React.FC<ImageCardProps> = (props) => {
   const { img, additionalStyle, scaleOnHover } = props;
 
-  const style: { [key: string]: string } = {
-    background: `url(${img}) no-repeat center`,
-    backgroundSize: 'cover',
-  };
+  const [isInView, setIsInView] = useState(false);
+  const divRef = useRef(null);
 
-  if (additionalStyle) {
-    Object.keys(additionalStyle).forEach((k) => {
-      style[k] = additionalStyle[k];
-    });
-  }
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (divRef.current) {
+      observer.observe(divRef.current);
+    }
+    const div = divRef.current;
+
+    return () => {
+      if (div) {
+        observer.unobserve(div);
+      }
+    };
+  }, []);
 
   return (
     <div
-      style={style}
+      style={{
+        backgroundImage: isInView ? `url(${img})` : 'none',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        ...additionalStyle,
+      }}
       className={scaleOnHover ? classes.scaleOnHover : ''}
+      ref={divRef}
     ></div>
   );
 };
